@@ -31,7 +31,7 @@ def font(filename):
 
 # Public page routes
 @route('/')
-@view('template')
+@view('index')
 def index(page_title='Home Page'):
     return dict(page_title=page_title)
 
