@@ -35,6 +35,11 @@ def font(filename):
 def index(page_title='Home Page'):
     return dict(page_title=page_title)
 
+@route('/sds')
+@view('sds')
+def sds(page_title='Service Delivery Screen'):
+    return dict(page_title=page_title)
+
 # Private page routes
 @route('/admin')
 @view('template')
