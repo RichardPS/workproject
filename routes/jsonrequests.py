@@ -3,21 +3,24 @@
 from bottle import route
 from json import dumps
 
+from modules.sdsdict import sds
+
 # JSON requests
 @route('/jsonsds')
 def jsonsds():
     ''' get stats '''
     # Here call function to gather dictionary of required stats
+    sdsdict = sds()
     ''' dummy dictionary '''
     csd = {
     	'monthlaunch': 50,
-    	'monthtarget': 75,
+    	'monthtarget': sdsdict['month'],
     	'yearlaunch': 500,
-    	'yeartarget': 1000,
+    	'yeartarget': sdsdict['year'],
     }
     tsd = {
     	'turnround': 2,
-    	'firstline': 'Chris Cameron',
+    	'firstline': sdsdict['firstline'],
     	'error': 1,
     	'small': 0,
     	'smallcharge': 2,
@@ -35,7 +38,7 @@ def jsonsds():
     	'csdave': 4.8,
     }
     issues = {
-    	'currentissues': 'None at this time',
+    	'currentissues': sdsdict['issues'],
     }
     sdsjson = {
     	'csd': csd,
