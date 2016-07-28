@@ -1,0 +1,14 @@
+/* INDEX STYLES
+=============== */
+.header {
+	height: 120px;
+	background: url(logo.png) no-repeat 10px center #fff;
+}
+
+.content {
+	min-height: 400px;
+}
+
+.footer {
+	height: 100px;
+}
